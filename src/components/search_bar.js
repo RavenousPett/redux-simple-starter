@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 
 // Class based component extends React.Component
 class SearchBar extends Component{
+    constructor(props){
+        super(props);
+
+        this.state = { term: '' };
+    }
     // Render method required on all class based components
     render(){
         // All input elements emit a change event (vanilla html)
