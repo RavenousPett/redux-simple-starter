@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 
 // Class based component extends React.Component
 class SearchBar extends Component{
+    // Call the construtor method
     constructor(props){
-        super(props);
+        super(props); // Call the parent construtor
 
+        // Create a state prop and set to an object with properties of what
+        // we want to record, in this case term, i.e. search term
         this.state = { term: '' };
     }
     // Render method required on all class based components
