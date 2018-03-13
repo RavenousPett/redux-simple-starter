@@ -1,4 +1,4 @@
-import React from 'react'; // Namespaced by npm so no directory needed
+import React, { Component } from 'react'; // Namespaced by npm so no directory needed
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar'; // Not namespaced so need relative directory from this file
@@ -11,12 +11,14 @@ YTSearch({key: API_KEY, term: 'surf wipeouts'}, function(data){
 
 // Create a new Component
 // This component should produce some html
-const App = () => {
-    return (
-        <div>
-            <SearchBar />
-        </div>
-    );
+class App extends Component {
+    render() {
+        return (
+            <div>
+                <SearchBar />
+            </div>
+        );
+    }
 }
 // Take this components generated html and put it on the page (in the DOM)
 ReactDOM.render(<App />, document.querySelector('.container'));
