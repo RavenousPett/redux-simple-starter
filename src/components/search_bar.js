@@ -17,8 +17,7 @@ class SearchBar extends Component{
         // use setState setter to change the state object
         return (
             <div>
-                <input onChange={event => this.setState({ term: event.target.value})} />  {/* Returns JSX. React specific property, onChange i.e. (on, TheEventName) */}
-                Value of the input {this.state.term} {/* Use {} for variables in JSX. Ok to use this.state.term when only referencing the state */}
+                <input onChange={event => this.setState({ term: event.target.value})} />
             </div>
         );
 
