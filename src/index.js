@@ -8,7 +8,7 @@ const API_KEY = 'AIzaSyDU0S7COi9iQ_sbDp_tKHTLtwog64i9k30'; // YouTube API key
 // Create a new Component
 // This component should produce some html
 class App extends Component {
-    construtor(props){
+    constructor(props){
         super(props);
 
         this.state = { videos: [] };
