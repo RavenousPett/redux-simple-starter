@@ -2,6 +2,7 @@ import React, { Component } from 'react'; // Namespaced by npm so no directory n
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar'; // Not namespaced so need relative directory from this file
+import VideoList from './components/video_list';
 
 const API_KEY = 'AIzaSyDU0S7COi9iQ_sbDp_tKHTLtwog64i9k30'; // YouTube API key
 
@@ -24,6 +25,7 @@ class App extends Component {
         return (
             <div>
                 <SearchBar />
+                <VideoList videos={this.state.videos} />
             </div>
         );
     }
