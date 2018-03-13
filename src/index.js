@@ -13,8 +13,10 @@ class App extends Component {
 
         this.state = { videos: [] };
 
-        YTSearch({key: API_KEY, term: 'surf wipeouts'}, data => {
-            this.setState({ videos: data });
+        YTSearch({key: API_KEY, term: 'surf wipeouts'}, videos => {
+            // ES6 syntactial sugar for when key and value are the same
+            // resolves to this.setState({ videos: videos });
+            this.setState({ videos });
         });
     }
 
