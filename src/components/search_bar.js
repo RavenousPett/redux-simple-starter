@@ -8,13 +8,14 @@ class SearchBar extends Component{
 
         // Create a state prop and set to an object with properties of what
         // we want to record, in this case term, i.e. search term
-        this.state = { term: '' };
+        this.state = { term: '' }; // This is the only place we should set state like this, always use setState elsewhere
     }
     // Render method required on all class based components
     render(){
         // All input elements emit a change event (vanilla html)
         // This line create a new input element and gives it a onChange 'prop', with arrow function in the value
-        return <input onChange={event => console.log(event.target.value)} />;  // Returns JSX. React specific property, onChange i.e. (on, TheEventName)
+        // use setState setter to change the state object
+        return <input onChange={event => this.setState({ term: event.target.value})} />;  // Returns JSX. React specific property, onChange i.e. (on, TheEventName)
     }
 }
 
