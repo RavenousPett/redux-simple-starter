@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar'; // Not namespaced so need relative directory from this file
 import VideoList from './components/video_list';
+import VideoDetail from './components/video_detail';
 
 const API_KEY = 'AIzaSyDU0S7COi9iQ_sbDp_tKHTLtwog64i9k30'; // YouTube API key
 
@@ -14,7 +15,7 @@ class App extends Component {
 
         this.state = { videos: [] };
 
-        YTSearch({key: API_KEY, term: 'surf wipeout'}, videos => {
+        YTSearch({key: API_KEY, term: 'surf wipeouts'}, videos => {
             // ES6 syntactial sugar for when key and value are the same
             // resolves to this.setState({ videos: videos });
             this.setState({ videos });
@@ -25,6 +26,7 @@ class App extends Component {
         return (
             <div>
                 <SearchBar />
+                <VideoDetail video={this.state.videos[0]}/>
                 <VideoList videos={this.state.videos} />
             </div>
         );
