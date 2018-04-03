@@ -5,7 +5,12 @@ const VideoList = props => {
     // Iterate through each video and return a video list item component. Returns an array of JSX
     // props.videos.map(video => {, same as props.videos.map(function(video){
     const videoItems = props.videos.map(video => {
-        return <VideoListItem key={video.etag} video={video} />
+        return (
+            <VideoListItem
+                onVideoSelect={props.onVideoSelect}
+                key={video.etag}
+                video={video} />
+        );
     });
 
     return(
