@@ -16,7 +16,7 @@ class SearchBar extends Component{
         // This line create a new input element and gives it a onChange 'prop', with arrow function in the value
         // use setState setter to change the state object
         return (
-            <div>
+            <div className="search-bar">
                 <input
                 value={this.state.term}
                 onChange={event => this.setState({ term: event.target.value})} />
